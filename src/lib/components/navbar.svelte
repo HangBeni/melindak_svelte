@@ -1,5 +1,7 @@
 <script lang="ts">
-  let links : Links = [
+  import type { Links } from "$lib/types";
+
+  let links : Links[] = [
     { name: "Főoldal", url: "/" },
     { name: "Rólunk", url: "/about_us" },
     { name: "Időpontfogalás", url: "/appointment" },
@@ -10,9 +12,7 @@
 
 <nav>
   <h1>Melindák</h1>
-  {
-    links.map((link) => (
-      <a href={link.url}>{link.name}</a>
-    ))
-  } 
+  {#each links as link} 
+    <a href={link.url}>{link.name}</a>
+  {/each}
 </nav>
