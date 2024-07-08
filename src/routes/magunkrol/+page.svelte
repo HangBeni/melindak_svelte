@@ -1,7 +1,9 @@
 <h2>Právicz-Kárász Melinda</h2>
 
-<!-- Kárász Melinda képe Kárász Melinda és egy kisbaba -->
-
+<img
+  src="$lib/assets/kepek/Karasz_M.jpg"
+  alt="Kárász Melinda képe Kárász Melinda és egy kisbaba"
+/>
 <p>
   ülésznő vagyok. 1998-2001 között a Pécsi Szülészeti és Nőgyógyászati Klinikán
   töltöttem, a szülésznőképzés alatt a gyakorlatom. Szakképesítésem megszerzése
@@ -20,8 +22,7 @@
   hangsúlyozom a segíteni akarást, és az empátia fontosságát.
 </p>
 <h2>Kaizer Melinda</h2>
-<!-- Kárász Melinda képe -->
-
+<img src="$lib/assets/kepek/Kaizer_M.jpg" alt="Kárász Melinda képe" />
 <p>
   Az elmúlt 25 évben a Pécsi Szülészeti és Nőgyógyászati Klinika szülőszobáján
   dolgozva szereztem meg azt a tapasztalatot melyben segíthetem az édesanyákat,
