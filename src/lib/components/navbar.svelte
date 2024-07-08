@@ -1,12 +1,7 @@
 <script lang="ts">
-  import type { Links } from "$lib/types";
+  import { links } from "$lib/utils/links";
 
-  let links : Links[] = [
-    { name: "Főoldal", url: "/" },
-    { name: "Rólunk", url: "/about_us" },
-    { name: "Időpontfogalás", url: "/appointment" },
-    {name: "Itt születtem történeteket", url: "/i_birth_here"}
-  ];
+  
 </script>
 
 
