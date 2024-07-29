@@ -4,10 +4,15 @@
   
 </script>
 
+<div>
+  <nav class="navbar">
+    <ul>
+      <li class="logo">Melindák</li>
+      {#each links as link} 
+        <a href={link.url}>{link.name}</a>
+      {/each}
+    </ul>
+   
+  </nav>
+</div>
 
-<nav>
-  <h1>Melindák</h1>
-  {#each links as link} 
-    <a href={link.url}>{link.name}</a>
-  {/each}
-</nav>

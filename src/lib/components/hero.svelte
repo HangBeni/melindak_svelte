@@ -1,9 +1,5 @@
-<script lang="ts">
-import nappali from "$lib/assets/kepek/helyseg.jpg";
-</script>
-
-<div class="hero">
-  <h2>Melindák szülésfelkészítés</h2>
-  <span><em>"...hogy a kismamáknak biztos támaszt nyújtsunk a várandosságuk alatt..."</em></span>
-  <img src={nappali} alt="nappali" />
+<div class="background">
+  <div class="quote">
+      <p><span class="melinda">Melindák <span class="szul">szülésfelkészítés</span></span><br>„..hogy a kismamáknak biztos támaszt nyújtsunk a várandósságuk alatt…”</p>
+  </div>
 </div>
