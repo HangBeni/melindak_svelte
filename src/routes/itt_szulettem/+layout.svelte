@@ -1,4 +1,5 @@
 <script lang="ts">
+    import NewStory from "$lib/components/new_story.svelte";
  import {links} from "$lib/utils/links";
 </script>
 <h2>
@@ -11,4 +12,5 @@
     <a href={link.url}>{link.name}</a>
   {/each}
 </aside>
+<NewStory/>
 <slot/>
