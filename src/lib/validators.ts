@@ -14,6 +14,22 @@ export function emailValidator(email: string, emailError: Element | null) {
   }
 }
 
+export function telephoneValidator(telephone: string, telephoneError: Element | null) {
+  const isValid = /^\+36\d{9}$/.test(telephone);
+
+  if (!isValid) {
+    if (telephoneError) {
+      telephoneError.textContent = "Nem megfelelő a telefonszám formátuma!";
+      return false;
+    }
+  } else {
+    if (telephoneError) {
+      telephoneError.textContent = "Add meg a telefonszámod!"; // Clear error message if valid
+      return true;
+    }
+  }
+}
+
 export function EditedValidator(input: string, inputErrorElement: Element | null) {
   const isValid = input.trim() !== "";
 
