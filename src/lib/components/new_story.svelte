@@ -46,12 +46,11 @@
       return false;
     }
     return true;
-
   }
 </script>
 
 <div>
-  <button on:click={() => dialog?.showModal()}>Van egy történeted?</button>
+  <button id="opener" on:click={() => dialog?.showModal()}>Van egy történeted?</button>
   <dialog id="story-dialog">
     <button on:click={() => dialog?.close()}>&#10006;</button>
     <h2>Írd meg a te és kicsid történetét!</h2>
@@ -76,6 +75,19 @@
 </div>
 
 <style>
+  #opener {
+    background-color: #f2b09e;
+    color: white;
+    padding: 14px 20px;
+    margin: 0 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  #opener:hover {
+    background-color: #ffc5c5;
+  }
+
   dialog[open] {
     animation: appear 0.5s cubic-bezier(0.3, 1, 0.47, 1);
   }
