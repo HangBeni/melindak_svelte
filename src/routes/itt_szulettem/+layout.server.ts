@@ -4,7 +4,8 @@ import type { LayoutServerLoad } from "./$types";
 export const load: LayoutServerLoad = async () => {
     const { data, error } = await supabase
         .from('stories')
-        .select('id');
+        .select('*');
+
     if (error) {
         console.error(error);
         return {
@@ -13,7 +14,6 @@ export const load: LayoutServerLoad = async () => {
         }
     }
     return {
-        count: data.length,
-        data: data as Stories[],
+        count: data.length
     }
 };
