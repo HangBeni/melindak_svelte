@@ -9,15 +9,21 @@ export type Stories = {
     name: string,
     story: string,
     email: string,
-    telephone: string
+    telephone: string,
+    public: boolean
 }
 
 export type Appointments = {
-    id: number
+    id: number,
     reserved_at: string,
     name: string,
     weeks: number,
-    appointment_date: string,
-    contact: string
+    appointment_time: string,
+    email: string,
+    phone: string
+}
 
+export type AppointmentTimes = {
+    id: number,
+    time: number
 }
