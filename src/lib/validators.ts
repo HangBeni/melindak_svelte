@@ -1,5 +1,5 @@
-export function emailValidator(email: string, emailError: Element | null) {
-  const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+export function emailValidator(email: HTMLInputElement, emailError: Element | null) {
+  const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value);
 
   if (!isValid) {
     if (emailError) {
@@ -8,15 +8,14 @@ export function emailValidator(email: string, emailError: Element | null) {
     }
   } else {
     if (emailError) {
-      emailError.textContent = ""; // Clear error message if valid
+      emailError.textContent = "Add meg kérlek az email címed";
       return true;
     }
   }
 }
 
-export function telephoneValidator(telephone: string, telephoneError: Element | null) {
-  const isValid = /^\+36\d{9}$/.test(telephone);
-
+export function telephoneValidator(telephone: HTMLInputElement, telephoneError: Element | null) {
+  const isValid = /^\+36\d{9}$/.test(telephone.value);
   if (!isValid) {
     if (telephoneError) {
       telephoneError.textContent = "Nem megfelelő a telefonszám formátuma!";
@@ -30,8 +29,8 @@ export function telephoneValidator(telephone: string, telephoneError: Element | 
   }
 }
 
-export function EditedValidator(input: string, inputErrorElement: Element | null) {
-  const isValid = input.trim() !== "";
+export function NameValidator(input: HTMLInputElement, inputErrorElement: Element | null) {
+  const isValid = input?.value.trim() !== "";
 
   if (!isValid) {
     if (inputErrorElement) {
@@ -40,7 +39,7 @@ export function EditedValidator(input: string, inputErrorElement: Element | null
     }
   } else {
     if (inputErrorElement) {
-      inputErrorElement.textContent = ""; // Clear error message if valid
+      inputErrorElement.textContent = "Add meg kérlek a neved";
       return true;
     }
   }
