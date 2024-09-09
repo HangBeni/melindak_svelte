@@ -1,8 +1,8 @@
 <script lang="ts">
-  import NewStory from "$lib/components/new_story.svelte";
+  import NewStory from "$lib/components/birth/new_story.svelte";
   import type { LayoutData } from "./$types";
   import "$lib/styles/index.css";
-    import { links } from "$lib/utils/links";
+  import { links } from "$lib/utils/links";
 
   export let data: LayoutData;
 </script>
@@ -16,31 +16,58 @@
 </p>
 
 <aside>
-
   <nav>
     {#each links.slice(0, 3) as link}
       <a href={link.url}>{link.name}</a>
     {/each}
   </nav>
 
-  <div>
-    <p>Kismama történetek: <br /> 
-    
-    {#if typeof data.count === "number" && data.count > 0}
-       {data.data?.map((story) => story.id).join(", ")}  
-       <!-- //egy compenensbe integrálni -->
+  <div class="storyCountContainer">
+    <h4 id="storyTitle">
+      Kismama történetek: <br />
+
+      {#if typeof data.count === "number" && data.count > 0}
+        <span id="storyc">{data.count}</span>
+        <!-- //egy compenensbe integrálni -->
       {:else}
-      Még nincsenek sztorik!
-    {/if}  
-    
-    </p>
+        <span> Még nincsenek sztorik! </span>
+      {/if}
+    </h4>
   </div>
 </aside>
 <NewStory />
 <slot />
 
 <style>
-  
+  h2 {
+    font-size: 6rem;
+    margin-inline: auto;
+    margin-bottom: 1rem;
+    width: fit-content;
+  }
+  nav {
+    margin-bottom: 1rem;
+  }
+  #storyTitle {
+    margin-bottom: 0;
+  }
+  .storyCountContainer {
+    font-size: 1.25rem;
+    font-family: "Pacifico", cursive;
+    width: fit-content;
+    height: min-content;
+    margin-inline: auto;
+    border-top: 2px black solid;
+    padding-top: 1rem;
+  }
+  #storyc {
+    display: block;
+    font-size: 1.75rem;
+    width: fit-content;
+    height: min-content;
+    margin-inline: auto;
+  }
+
   @media (max-width: 680px) {
     aside {
       position: fixed;
@@ -60,15 +87,12 @@
       margin-bottom: 0.5rem;
       text-decoration: none;
     }
-    h2 {
-      margin-left: 2rem;
-    }
 
     #description {
       margin-left: 1.35rem;
       min-width: 10rem;
       width: 42%;
-      
+      font-size: larger;
       text-align: justify;
     }
   }
@@ -88,15 +112,11 @@
       max-width: 300px;
     }
 
-    h2 {
-      margin-left: 2rem;
-    }
-
     #description {
-      font-size: larger;
-      margin-left: 1.5rem;
+      font-size: 3.5rem;
+      margin-left: 2.5rem;
       text-align: justify;
-      width: 30%;
+      width: 45%;
     }
   }
-  </style>
+</style>
