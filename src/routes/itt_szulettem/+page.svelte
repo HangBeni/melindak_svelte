@@ -18,12 +18,10 @@ export let data: PageServerData;
 <style>
     main{
         display: grid;
-        grid-template-columns: repeat(minmax(300px, 1fr), auto-fit);
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
         margin-inline: auto;
         margin-top: 10rem;
-        width: 50rem;
-        padding: 0.75rem;
-        background-color: rgba(255, 192, 203, 0.88);
-        border-radius: 0.75rem;
+        width: 80%;
     }
 </style>
