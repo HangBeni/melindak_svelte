@@ -7,6 +7,10 @@
   import { onMount } from "svelte";
   let form: HTMLFormElement | null;
   let dialog: HTMLDialogElement | null;
+
+  let storyInput: HTMLTextAreaElement;
+  let storyLabel: HTMLLabelElement;
+
   let nameInput: HTMLInputElement;
   let nameLabel: HTMLLabelElement;
 
@@ -16,9 +20,20 @@
   let telLabel: HTMLLabelElement;
   let telInput: HTMLInputElement;
 
+  let validInputs = {
+    name: false,
+    email: false,
+    tel: false,
+  };
+
   onMount(() => {
     form = document.querySelector("form") as HTMLFormElement;
     dialog = document.getElementById("story-dialog") as HTMLDialogElement;
+
+    storyInput = form?.querySelector(
+      'textarea[name="story"]',
+    ) as HTMLTextAreaElement;
+    storyLabel = form?.querySelector('label[for="story"]') as HTMLLabelElement;
 
     nameInput = form?.querySelector('input[name="name"]') as HTMLInputElement;
     nameLabel = form?.querySelector('label[for="name"]') as HTMLLabelElement;
@@ -28,19 +43,7 @@
 
     telLabel = form?.querySelector('label[for="tel"]') as HTMLLabelElement;
     telInput = form?.querySelector('input[type="tel"]') as HTMLInputElement;
-    
   });
-
-  function validateForm() {
-    if (
-      !NameValidator(nameInput, nameLabel) ||
-      !emailValidator(emailInput, emailLabel) ||
-      !telephoneValidator(telInput, telLabel) 
-    ) {
-      return false;
-    }
-    return true;
-  }
 </script>
 
 <div>
@@ -48,60 +51,90 @@
     >Van egy történeted?</button
   >
   <dialog id="story-dialog">
-    <button on:click={() => {dialog?.close();
-    form?.reset();
-    }}>&#10006;</button>
+    <button
+      on:click={() => {
+        dialog?.close();
+        form?.reset();
+      }}>&#10006;</button
+    >
     <h2>Írd meg a te és kicsid történetét!</h2>
     <form method="POST" action="?/story">
-      <label for="story">Mi a ti történetetek?</label>
-      <textarea
-        required
-        rows="15"
-        id="story"
-        minlength="100"
-        name="story"
-        
-      />
-      <span>
-        <label for="name">Add meg kérlek a neved</label>
-        <input
-          required
-          type="text"
-          name="name"
-          id="storyteller"
-          on:blur={() => NameValidator(nameInput, nameLabel)}
-        />
-      </span>
-      <span>
-        <label for="email">Kérlek add meg az emailed</label>
-        <input
-          required
-          type="email"
-          name="email"
-          id="email"
-          on:blur={() => emailValidator(emailInput, emailLabel)}
-        />
-      </span>
-      <span>
-        <label for="telephone">Add meg a telefonszámod!</label>
-        <input
-          required
-          type="tel"
-          name="telephone"
-          maxlength="7"
-          on:blur={() => telephoneValidator(telInput, telLabel)}
-        />
-      </span>
-      <button type="submit" on:click={() => validateForm}>Küldés</button>
+      <fieldset>
+        <label for="story">Mi a ti történetetek?</label>
+        <textarea required rows="15" id="story" minlength="150" name="story" />
+      </fieldset>
+      <fieldset>
+        <span>
+          <label for="name">Add meg kérlek a neved</label>
+          <input
+            required
+            type="text"
+            name="name"
+            autocomplete="name"
+            id="storyteller"
+            on:change={() => {
+              validInputs.name = NameValidator(nameInput.value, nameLabel);
+            }}
+          />
+        </span>
+      </fieldset>
+      <fieldset>
+        <span>
+          <label for="email">Kérlek add meg az emailed</label>
+          <input
+            required
+            type="email"
+            name="email"
+            autocomplete="email"
+            id="email"
+            on:change={() => {
+              validInputs.email = emailValidator(emailInput.value, emailLabel);
+            }}
+          />
+        </span>
+      </fieldset>
+      <fieldset>
+        <span>
+          <label for="telephone">Kérlek add meg a telefonszámod</label>
+          <input
+            required
+            type="tel"
+            name="telephone"
+            maxlength="12"
+            on:change={() => {
+              validInputs.tel = telephoneValidator(telInput.value, telLabel);
+            }}
+          />
+        </span>
+      </fieldset>
+      <fieldset>
+        <button
+          type="submit"
+          disabled={!validInputs || storyInput?.textLength < 100}>Küldés</button
+        >
+      </fieldset>
     </form>
   </dialog>
 </div>
 
 <style>
+  fieldset:invalid ~ fieldset {
+    display: none;
+    animation: 1s fade-in;
+  }
+  fieldset{
+    border: none;
+  }
+  button:disabled:hover {
+    background-color: #ffc5c5;
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
   #opener {
     width: 45%;
     font-size: 3.2rem;
-    font-family: 'Dancing Script', cursive;
+    font-family: "Dancing Script", cursive;
     background-color: #f2b09e;
     padding: 1rem 1.85rem;
     margin: 0 2rem;
@@ -143,7 +176,7 @@
 
   dialog {
     margin-top: 3.6rem;
-    background-color: white;
+    background-color: rgb(233, 229, 229);
     padding: 2em;
     border-radius: 2px;
     width: 50%;
@@ -169,22 +202,36 @@
     width: 50%;
     padding: 0.5em;
     margin-bottom: 1em;
-    border: 1px solid #ccc;
-    border-radius: 2px;
+    border-radius: 0.5rem;
+    border: black 1px solid;
+  }
+  dialog input[type="text"]:valid,
+  dialog input[type="email"]:valid,
+  dialog input[type="tel"]:valid,
+  dialog textarea:valid {
+    border: green 1px solid;
+  }
+  dialog input[type="text"]:invalid,
+  dialog input[type="email"]:invalid,
+  dialog input[type="tel"]:invalid,
+  dialog textarea:invalid {
+    border: red 1px solid;
   }
   dialog textarea {
-    width: 100%;
+    width: 90%;
+    font-size: 1rem;
   }
+
   dialog button[type="submit"] {
     padding: 0.5em 1em;
-    background-color: #007bff;
+    background-color: #ffc5c5;
     color: white;
     border: none;
     border-radius: 2px;
     cursor: pointer;
   }
 
-  dialog button[type="submit"]:hover {
-    background-color: #0056b3;
+  dialog button[type="submit"]:enabled:hover {
+    background-color: #f19b9b;
   }
 </style>

@@ -1,46 +1,36 @@
-export function emailValidator(email: HTMLInputElement, emailError: Element | null) {
-  const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value);
+export function emailValidator(email: string, emailError: Element | null): boolean {
+  if (!email) return false;
 
-  if (!isValid) {
-    if (emailError) {
-      emailError.textContent = "Nem megfelelő az email formátuma!";
-      return false;
-    }
-  } else {
-    if (emailError) {
-      emailError.textContent = "Add meg kérlek az email címed";
-      return true;
-    }
+  const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  if (emailError) {
+    emailError.textContent = isValid ? "Kérlek add meg az emailed" : "Nem megfelelő az email formátuma!";
   }
+
+  return isValid;
 }
 
-export function telephoneValidator(telephone: HTMLInputElement, telephoneError: Element | null) {
-  const isValid = /^\+36\d{9}$/.test(telephone.value);
-  if (!isValid) {
-    if (telephoneError) {
-      telephoneError.textContent = "Nem megfelelő a telefonszám formátuma!";
-      return false;
-    }
-  } else {
-    if (telephoneError) {
-      telephoneError.textContent = "Add meg a telefonszámod!"; // Clear error message if valid
-      return true;
-    }
+export function telephoneValidator(telephone: string, telephoneError: Element | null): boolean {
+  if (!telephone || !telephone) return false;
+
+  const isValid = /^\+36\d{9}$/.test(telephone);
+
+  if (telephoneError) {
+    telephoneError.textContent = isValid ? "Kérlek add meg a telefonszámod" : "Nem megfelelő a telefonszám formátuma!";
   }
+
+  return isValid;
 }
 
-export function NameValidator(input: HTMLInputElement, inputErrorElement: Element | null) {
-  const isValid = input?.value.trim() !== "";
+export function NameValidator(input: string, inputErrorElement: Element | null): boolean {
+  if (!input) return false;
 
-  if (!isValid) {
-    if (inputErrorElement) {
-      inputErrorElement.textContent = "Nem lehet üres ez a mező";
-      return false;
-    }
-  } else {
-    if (inputErrorElement) {
-      inputErrorElement.textContent = "Add meg kérlek a neved";
-      return true;
-    }
+  const isValid = input.trim() !== "";
+
+  if (inputErrorElement) {
+    inputErrorElement.textContent = isValid ? "Addd meg kérlek a neved" : "Nem lehet üres ez a mező";
   }
+
+  return isValid;
 }
+
