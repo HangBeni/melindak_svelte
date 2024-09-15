@@ -1,7 +1,7 @@
 export function emailValidator(email: string, emailError: Element | null): boolean {
   if (!email) return false;
 
-  const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const isValid = /^[\w-\.]+@[\w-]+\.+([\w]{2,4})+\.+[\w]{2,4}$/.test(email);
 
   if (emailError) {
     emailError.textContent = isValid ? "Kérlek add meg az emailed" : "Nem megfelelő az email formátuma!";
@@ -23,14 +23,22 @@ export function telephoneValidator(telephone: string, telephoneError: Element | 
 }
 
 export function NameValidator(input: string, inputErrorElement: Element | null): boolean {
-  if (!input) return false;
 
-  const isValid = input.trim() !== "";
-
+  const isEmpty = input.trim() === "";
+  const isFullName = input.trim().split(" ").length === 2;
+  
   if (inputErrorElement) {
-    inputErrorElement.textContent = isValid ? "Addd meg kérlek a neved" : "Nem lehet üres ez a mező";
-  }
 
-  return isValid;
+    if (isEmpty) {
+      inputErrorElement.textContent = !isEmpty ? "Addd meg kérlek a teljes neved" : "Nem lehet üres ez a mező";
+      return false; // Nem valid
+    }
+
+    if (!isFullName) {
+      inputErrorElement.textContent = isFullName ? "Addd meg kérlek a teljes neved" : "A teljes nevedet add meg kérlek";
+      return false // Nem valid
+    }
+  }
+  return isEmpty && isFullName;
 }
 
