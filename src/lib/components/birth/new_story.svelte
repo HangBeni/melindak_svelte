@@ -26,6 +26,9 @@
     tel: false,
   };
 
+  let reg_name = "(^[A-Za-z]{3,16})([ ]{0,1})([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})";
+  let reg_email= "/^[\w-\.]+@[\w-]+\.+([\w]{2,4})+\.+[\w]{2,4}$/";
+  
   onMount(() => {
     form = document.querySelector("form") as HTMLFormElement;
     dialog = document.getElementById("story-dialog") as HTMLDialogElement;
@@ -65,13 +68,15 @@
       </fieldset>
       <fieldset>
         <span>
-          <label for="name">Add meg kérlek a neved</label>
+          <label for="name">Add meg kérlek a teljes neved</label>
           <input
             required
             type="text"
             name="name"
             autocomplete="name"
             id="storyteller"
+            title="(Dr.) Vezetéknév Keresztnév Harmadiknév"
+            pattern={reg_name}
             on:change={() => {
               validInputs.name = NameValidator(nameInput.value, nameLabel);
             }}
@@ -87,6 +92,7 @@
             name="email"
             autocomplete="email"
             id="email"
+            pattern={reg_email}
             on:change={() => {
               validInputs.email = emailValidator(emailInput.value, emailLabel);
             }}
@@ -122,6 +128,7 @@
     display: none;
     animation: 1s fade-in;
   }
+
   fieldset{
     border: none;
   }
@@ -195,28 +202,37 @@
   dialog span {
     display: block;
   }
+
+  dialog input[type="text"]:focus,
+  dialog input[type="email"]:focus,
+  dialog input[type="tel"]:focus,
+  dialog textarea:focus{
+    border-style: double;
+  }
+
   dialog input[type="text"],
   dialog input[type="email"],
   dialog input[type="tel"],
   dialog textarea {
-    width: 50%;
     padding: 0.5em;
     margin-bottom: 1em;
     border-radius: 0.5rem;
-    border: black 1px solid;
   }
+
   dialog input[type="text"]:valid,
   dialog input[type="email"]:valid,
   dialog input[type="tel"]:valid,
   dialog textarea:valid {
-    border: green 1px solid;
+    border: green 2px solid;
   }
+
   dialog input[type="text"]:invalid,
   dialog input[type="email"]:invalid,
   dialog input[type="tel"]:invalid,
   dialog textarea:invalid {
-    border: red 1px solid;
+    border: black 1px double;
   }
+  
   dialog textarea {
     width: 90%;
     font-size: 1rem;
