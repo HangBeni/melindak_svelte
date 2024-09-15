@@ -1,18 +1,18 @@
-export function emailValidator(email: string, emailError: Element | null): boolean {
-  if (!email) return false;
+export function emailValidator(email: string | undefined, emailError: Element | null): boolean {
+ if (!email) return false;
 
-  const isValid = /^[\w-\.]+@[\w-]+\.+([\w]{2,4})+\.+[\w]{2,4}$/.test(email);
+  const isValid = /^[\w-\.]+@[\w-]+\.+([\w]{2,4})+(?:\.\w{2,4})$/.test(email) || /^[\w-\.]+@[\w-]+\.+([\w]{2,4})$/.test(email) ;
 
-  if (emailError) {
-    emailError.textContent = isValid ? "Kérlek add meg az emailed" : "Nem megfelelő az email formátuma!";
-  }
+if (!isValid) {
+  emailError!.textContent = "Nem megfelelő a email formátuma";
+}
 
+  emailError!.textContent = "Kérlek add meg az emailed";
   return isValid;
 }
 
-export function telephoneValidator(telephone: string, telephoneError: Element | null): boolean {
-  if (!telephone || !telephone) return false;
-
+export function telephoneValidator(telephone: string | undefined, telephoneError: Element | null): boolean {
+  if(!telephone) return false;
   const isValid = /^\+36\d{9}$/.test(telephone);
 
   if (telephoneError) {
@@ -22,11 +22,12 @@ export function telephoneValidator(telephone: string, telephoneError: Element | 
   return isValid;
 }
 
-export function NameValidator(input: string, inputErrorElement: Element | null): boolean {
-
-  const isEmpty = input.trim() === "";
-  const isFullName = input.trim().split(" ").length === 2;
+export function NameValidator(input: string | undefined, inputErrorElement: Element | null): boolean {
+  if (!input) return false;
   
+  const isEmpty = input.trim() === "";
+  const isFullName = input.trim().split(" ").length >= 2;
+
   if (inputErrorElement) {
 
     if (isEmpty) {
@@ -39,6 +40,6 @@ export function NameValidator(input: string, inputErrorElement: Element | null):
       return false // Nem valid
     }
   }
-  return isEmpty && isFullName;
+  return !isEmpty && isFullName; // Valid
 }
 
