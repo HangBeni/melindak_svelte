@@ -26,9 +26,12 @@
     tel: false,
   };
 
-  let reg_name = "(^[A-Za-z]{3,16})([ ]{0,1})([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})";
-  let reg_email= "/^[\w-\.]+@[\w-]+\.+([\w]{2,4})+\.+[\w]{2,4}$/";
-  
+  $: validation = validInputs.name && validInputs.email && validInputs.tel;
+
+  let reg_name =
+    "(^[A-Za-z-]{3,16})([ ]{0,1})([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})";
+  let reg_email = "[w-.]+@[w-]+.+([w]{2,4})+(?:.w{2,4})";
+  let reg_tel = "+36d{9}";
   onMount(() => {
     form = document.querySelector("form") as HTMLFormElement;
     dialog = document.getElementById("story-dialog") as HTMLDialogElement;
@@ -61,7 +64,10 @@
       }}>&#10006;</button
     >
     <h2>Írd meg a te és kicsid történetét!</h2>
-    <form method="POST" action="?/story">
+    <form
+      method="POST"
+      action="?/story"
+    >
       <fieldset>
         <label for="story">Mi a ti történetetek?</label>
         <textarea required rows="15" id="story" minlength="150" name="story" />
@@ -107,17 +113,15 @@
             type="tel"
             name="telephone"
             maxlength="12"
-            on:change={() => {
+            pattern={reg_tel}
+            on:input={() => {
               validInputs.tel = telephoneValidator(telInput.value, telLabel);
             }}
           />
         </span>
       </fieldset>
       <fieldset>
-        <button
-          type="submit"
-          disabled={!validInputs || storyInput?.textLength < 100}>Küldés</button
-        >
+        <button type="submit" disabled={!validation}>Küldés</button>
       </fieldset>
     </form>
   </dialog>
@@ -126,16 +130,11 @@
 <style>
   fieldset:invalid ~ fieldset {
     display: none;
-    animation: 1s fade-in;
+    animation: fade-in 1s;
   }
 
-  fieldset{
+  fieldset {
     border: none;
-  }
-  button:disabled:hover {
-    background-color: #ffc5c5;
-    opacity: 0.5;
-    cursor: not-allowed;
   }
 
   #opener {
@@ -206,7 +205,7 @@
   dialog input[type="text"]:focus,
   dialog input[type="email"]:focus,
   dialog input[type="tel"]:focus,
-  dialog textarea:focus{
+  dialog textarea:focus {
     border-style: double;
   }
 
@@ -232,7 +231,7 @@
   dialog textarea:invalid {
     border: black 1px double;
   }
-  
+
   dialog textarea {
     width: 90%;
     font-size: 1rem;
@@ -240,11 +239,15 @@
 
   dialog button[type="submit"] {
     padding: 0.5em 1em;
-    background-color: #ffc5c5;
+    background-color: #f19b9b;
     color: white;
     border: none;
     border-radius: 2px;
     cursor: pointer;
+  }
+
+  dialog button[type="submit"]:disabled {
+    display: none;
   }
 
   dialog button[type="submit"]:enabled:hover {
