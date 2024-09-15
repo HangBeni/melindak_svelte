@@ -71,7 +71,7 @@
   @media (max-width: 680px) {
     aside {
       position: fixed;
-      top: 2rem;
+      top: 1rem;
       right: 1rem;
       display: flex;
       flex-direction: column;
@@ -100,8 +100,8 @@
   @media (min-width: 681px) {
     aside {
       position: fixed;
-      top: 2rem;
-      right: 2rem;
+      top: 7rem;
+      right: 1rem;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
