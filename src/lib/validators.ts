@@ -43,3 +43,13 @@ export function NameValidator(input: string | undefined, inputErrorElement: Elem
   return !isEmpty && isFullName; // Valid
 }
 
+export function checkFormat(storyTippElement: HTMLParagraphElement, storyContent: string) {
+
+  if (!storyContent.includes("\n")) {
+    storyTippElement.textContent = "Figyelem, a sztoriban használj sortörést, hogy olvashatóbb legyen a történeted!";
+    storyTippElement.id = "";
+  } else {
+    storyTippElement.textContent = "";
+    storyTippElement.classList.remove("show-tipp");
+  }
+}
