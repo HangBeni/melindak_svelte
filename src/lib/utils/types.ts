@@ -14,16 +14,18 @@ export type Stories = {
 }
 
 export type Appointments = {
-    id: number,
-    reserved_at: string,
+    id?: number,
+    reserved_at?: string,
     name: string,
     weeks: number,
     appointment_time: string,
     email: string,
-    phone: string
+    phone: string,
+    melinda: string
 }
 
 export type AppointmentTimes = {
     id: number,
-    time: number
+    created_at: string,
+    time: string
 }
