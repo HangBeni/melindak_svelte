@@ -1,6 +1,8 @@
 <script lang="ts">
+    import { reg_email, reg_name, reg_tel, validInputs } from "$lib/utils/regex";
   import {
     NameValidator,
+    checkFormat,
     emailValidator,
     telephoneValidator,
   } from "$lib/validators";
@@ -20,18 +22,13 @@
   let telLabel: HTMLLabelElement;
   let telInput: HTMLInputElement;
 
-  let validInputs = {
-    name: false,
-    email: false,
-    tel: false,
-  };
+  let storyTipp: HTMLParagraphElement;
+  
+  let storyChars: string = "";
 
   $: validation = validInputs.name && validInputs.email && validInputs.tel;
 
-  let reg_name =
-    "(^[A-Za-z-]{3,16})([ ]{0,1})([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})";
-  let reg_email = "[w-.]+@[w-]+.+([w]{2,4})+(?:.w{2,4})";
-  let reg_tel = "+36d{9}";
+ 
   onMount(() => {
     form = document.querySelector("form") as HTMLFormElement;
     dialog = document.getElementById("story-dialog") as HTMLDialogElement;
@@ -49,6 +46,8 @@
 
     telLabel = form?.querySelector('label[for="tel"]') as HTMLLabelElement;
     telInput = form?.querySelector('input[type="tel"]') as HTMLInputElement;
+
+    storyTipp = form?.querySelector("#story-tipp") as HTMLParagraphElement;
   });
 </script>
 
@@ -63,14 +62,16 @@
         form?.reset();
       }}>&#10006;</button
     >
-    <h2>Írd meg a te és kicsid történetét!</h2>
+    <h2>Írd meg a te és kicsid történetét, hogy ezzel is bátoríts másokat!</h2>
     <form
       method="POST"
       action="?/story"
     >
       <fieldset>
         <label for="story">Mi a ti történetetek?</label>
-        <textarea required rows="15" id="story" minlength="150" name="story" />
+        <textarea required rows="15" id="story" minlength="200" name="story" bind:value={storyChars} on:blur={() => checkFormat(storyTipp, storyChars)}/>
+        <span>{storyChars.length}/200</span>
+        <p id="story-tipp"></p>
       </fieldset>
       <fieldset>
         <span>
@@ -128,6 +129,18 @@
 </div>
 
 <style>
+  #story-tipp{
+    display: none;
+  }
+  p{
+    font-size: 1.25rem;
+    width: fit-content;
+    margin-left: auto;
+  }
+  /* .show-tipp{
+    display: block;
+  } */
+  
   fieldset:invalid ~ fieldset {
     display: none;
     animation: fade-in 1s;
