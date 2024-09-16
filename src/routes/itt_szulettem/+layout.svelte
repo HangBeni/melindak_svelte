@@ -70,7 +70,7 @@
 
   @media (max-width: 680px) {
     aside {
-      position: fixed;
+      position: absolute;
       top: 1rem;
       right: 1rem;
       display: flex;
@@ -99,10 +99,11 @@
 
   @media (min-width: 681px) {
     aside {
-      position: fixed;
+      position: absolute;
       top: 7rem;
       right: 1rem;
       display: flex;
+      width: 100%;
       flex-direction: column;
       align-items: flex-start;
       background-color: rgba(255, 192, 203, 0.8);
