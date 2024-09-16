@@ -7,4 +7,4 @@
 </script>
 
 <Base />
-<NewAppointment appointments={data.appointments}/>
+<NewAppointment booked_appointments={data.booked_appointments} available_appointments={data.appointment_times}/>
