@@ -27,6 +27,8 @@
 
 <style>
     #title {
+        font-size: 2.5rem;
         text-align: center;
+        margin-top: 2rem;
     }
 </style>
