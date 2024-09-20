@@ -216,6 +216,7 @@ article{
 
 h1,h2{
     font-family: 'Oregano', cursive;
+    margin-bottom: 0;
 }
 
 footer{
