@@ -37,7 +37,9 @@
 </aside>
 <NewStory />
 <slot />
-
+<footer>
+    <p>Melindák szülésfelkészítés</p>
+</footer>
 <style>
   h2 {
     font-size: 6rem;

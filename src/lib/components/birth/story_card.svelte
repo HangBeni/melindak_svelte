@@ -37,16 +37,16 @@
         text-decoration: none;
         font-family: inherit;
         color: inherit;
-        padding: 0;
+        padding: 1rem;
     }
     .card {
         position: relative;
         height: 6rem;
         border: black 1px solid;
         cursor: pointer;
-        width: 30rem;
+        width: 25rem;
         background-color: rgba(255, 192, 203, 0.88);
-        padding: 1.5rem 1rem;
+        padding: 1.5rem 1.25rem;
         padding-top: 0.5rem;
         border-radius: 0.75rem;
     }
@@ -56,7 +56,7 @@
         font-size: larger;
         line-height: 1.5rem;
         height: calc(2 * 1.5rem);
-        width: 30rem;
+        width: 25rem;
         margin-top: -1.5rem;
         margin-inline: auto;
         overflow-wrap: break-word;

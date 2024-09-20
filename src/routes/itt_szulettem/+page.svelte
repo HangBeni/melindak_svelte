@@ -18,10 +18,11 @@ export let data: PageServerData;
 <style>
     main{
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 3rem;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 5rem;
         margin-inline: auto;
         margin-top: 10rem;
+        margin-bottom: 10rem;
         width: 80%;
     }
 </style>
