@@ -1,6 +1,6 @@
 <div class="content-container">
     <div class="container">
-        <h1>Az időpontot telefonon is lehet egyeztetni!</h1>
+        <h1 id="title">Az időpontot telefonon is lehet egyeztetni!</h1>
         <table>
             <tr>
                 <th>Szolgáltatásaink</th>
@@ -24,3 +24,9 @@
         </div>
     </div>
 </div>
+
+<style>
+    #title {
+        text-align: center;
+    }
+</style>
