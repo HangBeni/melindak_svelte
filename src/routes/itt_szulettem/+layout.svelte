@@ -10,7 +10,7 @@
 <h2>Történetek amik itt születtek</h2>
 <p id="description">
   <em
-    >A szülésfelkészítés keretein belül született gyermekek és édasannyuk
+    >A szülésfelkészítés keretein belül született gyermekek és édasanyjuk
     történeteit olvashatjátok itt</em
   >
 </p>
