@@ -3,7 +3,8 @@
   import type { LayoutData } from "./$types";
   import "$lib/styles/index.css";
   import { links } from "$lib/utils/links";
-
+import { inject } from '@vercel/analytics'
+inject({mode:'production'})
   export let data: LayoutData;
 </script>
 
