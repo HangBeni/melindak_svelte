@@ -151,12 +151,12 @@
   }
 
   #opener {
-    width: 45%;
+    width: 55%;
     font-size: 3.2rem;
     font-family: "Dancing Script", cursive;
     background-color: #f2b09e;
     padding: 1rem 1.85rem;
-    margin: 0 2rem;
+    margin: 0 1rem;
     border: none;
     cursor: pointer;
     border-radius: 0.85rem;

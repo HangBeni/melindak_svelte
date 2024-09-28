@@ -31,4 +31,9 @@
         text-align: center;
         margin-top: 2rem;
     }
+    .content-container {
+      
+        margin-bottom: 2rem;
+    }
+    
 </style>

@@ -70,3 +70,10 @@
     </article>
   </div>
 </div>
+
+
+<style>
+  .content-container {
+  margin-bottom: 2rem;
+  }
+</style>

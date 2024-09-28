@@ -3,8 +3,9 @@
   import type { LayoutData } from "./$types";
   import "$lib/styles/index.css";
   import { links } from "$lib/utils/links";
-import { inject } from '@vercel/analytics'
-inject({mode:'production'})
+  import { inject } from "@vercel/analytics";
+  import { dev } from "$app/environment";
+  inject({ mode: dev ? "development" : "production" });
   export let data: LayoutData;
 </script>
 
@@ -39,8 +40,9 @@ inject({mode:'production'})
 <NewStory />
 <slot />
 <footer>
-    <p>Melindák szülésfelkészítés</p>
+  <p>Melindák szülésfelkészítés</p>
 </footer>
+
 <style>
   h2 {
     font-size: 6rem;
@@ -62,6 +64,7 @@ inject({mode:'production'})
     margin-inline: auto;
     border-top: 2px black solid;
     padding-top: 1rem;
+    text-align: center;
   }
   #storyc {
     display: block;
@@ -73,10 +76,12 @@ inject({mode:'production'})
 
   @media (max-width: 680px) {
     aside {
-      position: absolute;
+      position: sticky;
       top: 1rem;
       right: 1rem;
+      margin-left: auto;
       display: flex;
+      width: 10rem;
       flex-direction: column;
       align-items: flex-end;
       background-color: rgba(255, 192, 203, 0.8);
@@ -92,11 +97,15 @@ inject({mode:'production'})
     }
 
     #description {
+      display: block;
       margin-left: 1.35rem;
+      width: 90%;
       min-width: 10rem;
-      width: 42%;
       font-size: larger;
       text-align: justify;
+    }
+    h2 {
+      font-size: 4.75rem;
     }
   }
 
