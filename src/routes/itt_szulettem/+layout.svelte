@@ -52,6 +52,8 @@
   }
   nav {
     margin-bottom: 1rem;
+    text-align: center;
+    margin-inline: auto;
   }
   #storyTitle {
     margin-bottom: 0;
@@ -74,7 +76,7 @@
     margin-inline: auto;
   }
 
-  @media (max-width: 680px) {
+  @media (max-width: 620px) {
     aside {
       position: sticky;
       top: 1rem;
@@ -109,7 +111,7 @@
     }
   }
 
-  @media (min-width: 681px) {
+  @media (min-width: 620px) {
     aside {
       position: absolute;
       top: 7rem;

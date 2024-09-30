@@ -35,7 +35,7 @@ nav li{
     font-size: 30px;
     font-family: 'Dancing Script', cursive;
 }
-@media screen and (max-width:600px) {
+@media screen and (max-width:620px) {
     .logo{
         display: none;
     }
@@ -52,7 +52,7 @@ nav a {
     text-decoration: none;
     font-family: 'Pacifico', cursive;
 }
-@media screen and (max-width: 600px){
+@media screen and (max-width: 620px){
     nav a{
         font-size: 0.75rem;
         width: 23ch;

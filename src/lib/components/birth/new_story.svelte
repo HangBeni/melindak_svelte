@@ -129,6 +129,9 @@
 </div>
 
 <style>
+  div{
+    width: 20rem;
+  }
   #story-tipp{
     display: none;
   }
@@ -151,7 +154,6 @@
   }
 
   #opener {
-    width: 55%;
     font-size: 3.2rem;
     font-family: "Dancing Script", cursive;
     background-color: #f2b09e;
@@ -164,7 +166,13 @@
   #opener:hover {
     background-color: #ffc5c5;
   }
-
+@media (max-width: 620px) {
+  #opener {
+    position: absolute;
+    width: 20rem;
+    top: 20rem;
+  }
+}
   dialog[open] {
     animation: appear 0.5s cubic-bezier(0.3, 1, 0.47, 1);
   }
