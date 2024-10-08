@@ -46,6 +46,7 @@
 <style>
   aside{
     position: relative;
+    margin-bottom: 1rem;
     z-index: 0;
   }
   h2 {
