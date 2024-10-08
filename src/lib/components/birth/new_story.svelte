@@ -154,6 +154,7 @@
   }
 
   #opener {
+    position: relative;
     font-size: 3.2rem;
     font-family: "Dancing Script", cursive;
     background-color: #f2b09e;
@@ -162,16 +163,20 @@
     border: none;
     cursor: pointer;
     border-radius: 0.85rem;
+    z-index: 1;
   }
   #opener:hover {
     background-color: #ffc5c5;
   }
 @media (max-width: 620px) {
-  #opener {
-    position: absolute;
-    width: 20rem;
-    top: 20rem;
-  }
+
+ dialog[open] {
+   height: 70vh;
+   width: 70vw;
+ }
+ dialog textarea  {
+   height: 12rem;
+ }
 }
   dialog[open] {
     animation: appear 0.5s cubic-bezier(0.3, 1, 0.47, 1);
