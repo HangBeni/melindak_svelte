@@ -44,6 +44,10 @@
 </footer>
 
 <style>
+  aside{
+    position: relative;
+    z-index: 0;
+  }
   h2 {
     font-size: 6rem;
     margin-inline: auto;
@@ -107,7 +111,7 @@
       text-align: justify;
     }
     h2 {
-      font-size: 4.75rem;
+      font-size: 3.75rem;
     }
   }
 
