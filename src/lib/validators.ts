@@ -13,7 +13,7 @@ if (!isValid) {
 
 export function telephoneValidator(telephone: string | undefined, telephoneError: Element | null): boolean {
   if(!telephone) return false;
-  const isValid = /^\+36\d{9}$/.test(telephone);
+  const isValid = /^((\+36)|06)\d{9}$/.test(telephone);
 
   if (telephoneError) {
     telephoneError.textContent = isValid ? "Kérlek add meg a telefonszámod" : "Nem megfelelő a telefonszám formátuma!";
