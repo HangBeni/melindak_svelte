@@ -218,10 +218,10 @@ a:hover::after {
 .b-cont{
     margin: auto;
     text-align: center;
-    margin-bottom: 4rem;
-    margin-top: 1%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     font-family: 'Oregano', cursive;
-    font-size: 20px;
+    font-size: 1.5rem;
 }
 .button{
     padding: 10px 30px;
@@ -251,16 +251,18 @@ h1,h2{
 }
 
 footer{
-    position: fixed;
+    position: static;
+    display: flex;
+    justify-content: space-around;
     bottom: 0;
     width: 100%;
     background-color: rgba(255, 192, 203,0.88);
-    height: 40px;
     text-align: center;
 }
 
 footer p{
     padding-top: 10px;
+    width: fit-content;
     font-family: 'Pacifico', cursive;
 }
 
