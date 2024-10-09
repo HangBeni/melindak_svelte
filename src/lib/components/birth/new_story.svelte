@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { reg_email, reg_name, reg_tel, validInputs } from "$lib/utils/regex";
+  import { reg_email, reg_name, reg_tel, validInputs } from "$lib/utils/regex";
   import {
     NameValidator,
     checkFormat,
@@ -7,11 +7,9 @@
     telephoneValidator,
   } from "$lib/validators";
   import { onMount } from "svelte";
+
   let form: HTMLFormElement | null;
   let dialog: HTMLDialogElement | null;
-
-  let storyInput: HTMLTextAreaElement;
-  let storyLabel: HTMLLabelElement;
 
   let nameInput: HTMLInputElement;
   let nameLabel: HTMLLabelElement;
@@ -23,20 +21,14 @@
   let telInput: HTMLInputElement;
 
   let storyTipp: HTMLParagraphElement;
-  
+
   let storyChars: string = "";
 
-  $: validation = validInputs.name && validInputs.email && validInputs.tel;
+  $: validation = validInputs.name && validInputs.tel;
 
- 
   onMount(() => {
     form = document.querySelector("form") as HTMLFormElement;
     dialog = document.getElementById("story-dialog") as HTMLDialogElement;
-
-    storyInput = form?.querySelector(
-      'textarea[name="story"]',
-    ) as HTMLTextAreaElement;
-    storyLabel = form?.querySelector('label[for="story"]') as HTMLLabelElement;
 
     nameInput = form?.querySelector('input[name="name"]') as HTMLInputElement;
     nameLabel = form?.querySelector('label[for="name"]') as HTMLLabelElement;
@@ -62,20 +54,24 @@
         form?.reset();
       }}>&#10006;</button
     >
-    <h2>Írd meg a te és kicsid történetét, hogy ezzel is bátoríts másokat!</h2>
-    <form
-      method="POST"
-      action="?/story"
-    >
-      <fieldset>
-        <label for="story">Mi a ti történetetek?</label>
-        <textarea required rows="15" id="story" minlength="200" name="story" bind:value={storyChars} on:blur={() => checkFormat(storyTipp, storyChars)}/>
-        <span>{storyChars.length}/200</span>
-        <p id="story-tipp"></p>
-      </fieldset>
+
+    <h2>Mutasd meg a ti történeteket, hogy ezzel is bátoríts másokat!</h2>
+
+    <form method="POST" action="?/story">
+      <label for="story">Mi a ti történetetek? (opcionális)</label>
+      <textarea
+        rows="15"
+        id="story"
+        name="story"
+        bind:value={storyChars}
+        on:blur={() => checkFormat(storyTipp, storyChars)}
+      />
+      <span>{storyChars.length}/200</span>
+      <p id="story-tipp"></p>
+
       <fieldset>
         <span>
-          <label for="name">Add meg kérlek a teljes neved</label>
+          <label for="name">Add meg kérlek a teljes neved*</label>
           <input
             required
             type="text"
@@ -92,23 +88,7 @@
       </fieldset>
       <fieldset>
         <span>
-          <label for="email">Kérlek add meg az emailed</label>
-          <input
-            required
-            type="email"
-            name="email"
-            autocomplete="email"
-            id="email"
-            pattern={reg_email}
-            on:change={() => {
-              validInputs.email = emailValidator(emailInput.value, emailLabel);
-            }}
-          />
-        </span>
-      </fieldset>
-      <fieldset>
-        <span>
-          <label for="telephone">Kérlek add meg a telefonszámod</label>
+          <label for="telephone">Kérlek add meg a telefonszámod*</label>
           <input
             required
             type="tel"
@@ -122,20 +102,48 @@
         </span>
       </fieldset>
       <fieldset>
+        <label for="picture"
+          >Kérlek tölts fel egy képet rólad és/vagy a kisbabádról*</label
+        >
+        <input
+        required
+          accept="image/*"
+          type="file"
+          name="picture"
+          id="picture"
+        />
+      </fieldset>
+      <fieldset>
+        <span>
+          <label for="email">Kérlek add meg az emailed</label>
+          <input
+            type="email"
+            name="email"
+            autocomplete="email"
+            id="email"
+            pattern={reg_email}
+            on:change={() => {
+              validInputs.email = emailValidator(emailInput.value, emailLabel);
+            }}
+          />
+        </span>
+      </fieldset>
+      <fieldset>
         <button type="submit" disabled={!validation}>Küldés</button>
       </fieldset>
+      <p>Kötelező mező*</p>
     </form>
   </dialog>
 </div>
 
 <style>
-  div{
+  div {
     width: 20rem;
   }
-  #story-tipp{
+  #story-tipp {
     display: none;
   }
-  p{
+  p {
     font-size: 1.25rem;
     width: fit-content;
     margin-left: auto;
@@ -143,7 +151,7 @@
   /* .show-tipp{
     display: block;
   } */
-  
+
   fieldset:invalid ~ fieldset {
     display: none;
     animation: fade-in 1s;
@@ -168,16 +176,15 @@
   #opener:hover {
     background-color: #ffc5c5;
   }
-@media (max-width: 620px) {
-
- dialog[open] {
-   height: 70vh;
-   width: 70vw;
- }
- dialog textarea  {
-   height: 12rem;
- }
-}
+  @media (max-width: 620px) {
+    dialog[open] {
+      height: 70vh;
+      width: 70vw;
+    }
+    dialog textarea {
+      height: 12rem;
+    }
+  }
   dialog[open] {
     animation: appear 0.5s cubic-bezier(0.3, 1, 0.47, 1);
   }
