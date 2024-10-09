@@ -5,6 +5,7 @@
   import { links } from "$lib/utils/links";
   import { inject } from "@vercel/analytics";
   import { dev } from "$app/environment";
+  import Footer from "$lib/components/footer.svelte";
   inject({ mode: dev ? "development" : "production" });
   export let data: LayoutData;
 </script>
@@ -39,9 +40,7 @@
 </aside>
 <NewStory />
 <slot />
-<footer>
-  <p>Melindák szülésfelkészítés</p>
-</footer>
+<Footer/>
 
 <style>
   aside{
