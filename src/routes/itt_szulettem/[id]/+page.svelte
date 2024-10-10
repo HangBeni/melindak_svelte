@@ -1,21 +1,40 @@
 <script lang="ts">
+  import { page } from "$app/stores";
   import type { PageServerData } from "./$types";
 
   export let data: PageServerData;
-  let url = data.storie?.picture;
 
+  $: index = parseInt($page.params.id);
 </script>
 
 <main>
-
-  {#if data.storie}
-    <img
-    src="{url}"
-    alt="Kép a kisgyermekról és/vagy édesannyáról"/> 
+  <nav>
+    <div class="nav-container">
+      {#if data.stories}
+        {#if data.stories.find((story) => story.id === index - 1 && story.public === true)}
+          <a
+            id="left_btn"
+            href={`/itt_szulettem/${data.stories.find((story) => story.id === index - 1)?.id}`}
+            >Előző</a
+          >
+        {/if}
+        {#if data.stories.find((story) => story.id === index + 1 && story.public === true)}
+          <a
+            id="right_btn"
+            href={`/itt_szulettem/${data.stories.find((story) => story.id === index + 1)?.id}`}
+            >Kövi</a
+          >
+        {/if}
+      {:else}
+        Nincsenek történetek
+      {/if}
+    </div>
+  </nav>
+  {#if data.stories}
     <div class="story-container">
-      <h1>{data.storie?.name}</h1>
+      <h1>{data.stories.find((story) => story.id === index)?.name}</h1>
       <p>
-        {data.storie?.story}
+        {data.stories.find((story) => story.id === index)?.story}
       </p>
     </div>
   {/if}
@@ -27,7 +46,25 @@
 </main>
 
 <style>
-
+  nav {
+    height: 7rem;
+    background-color: #ffc0cbcc;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+  }
+  nav:nth-of-type(2) {
+    width: 50%;
+    height: 6rem;
+    border-bottom-right-radius: 0;
+    margin-left: 0;
+  }
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    margin-inline: auto;
+    margin-top: 1rem;
+    align-items: center;
+  }
   div > a {
     padding-top: 0.5rem;
     padding-left: 1rem;
@@ -37,6 +74,22 @@
     animation: appear 1s;
   }
 
+  #left_btn {
+    margin-right: auto;
+    border-bottom-left-radius: 66%;
+    border-top-right-radius: 5rem;
+    border-bottom-right-radius: 5rem;
+    text-align: left;
+    padding-left: 2rem;
+  }
+  #right_btn {
+    margin-left: auto;
+    border-bottom-right-radius: 66%;
+    border-top-left-radius: 5rem;
+    border-bottom-left-radius: 5rem;
+    text-align: right;
+    padding-right: 2rem;
+  }
   #back {
     width: fit-content;
     border-bottom-left-radius: 80%;
