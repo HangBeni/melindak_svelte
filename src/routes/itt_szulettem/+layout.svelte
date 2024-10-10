@@ -31,7 +31,6 @@
 
       {#if typeof data.count === "number" && data.count > 0}
         <span id="storyc">{data.count}</span>
-        <!-- //egy compenensbe integrálni -->
       {:else}
         <span> Még nincsenek sztorik! </span>
       {/if}
@@ -43,6 +42,9 @@
 <Footer/>
 
 <style>
+a{
+  padding-bottom: 0;
+}
   aside{
     position: relative;
     margin-bottom: 1rem;
@@ -98,7 +100,7 @@
 
     aside a {
       display: block;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
       text-decoration: none;
     }
 
@@ -130,7 +132,9 @@
       box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
       max-width: 300px;
     }
-
+    aside a {
+      margin-bottom: 1rem;
+    }
     #description {
       font-size: 3.5rem;
       margin-left: 2.5rem;
