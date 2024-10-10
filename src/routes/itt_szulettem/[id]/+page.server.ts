@@ -6,7 +6,7 @@ export const load = async ({params}) => {
     let now: number = parseInt(params.id);
     const { data, error } = await supabase
     .from('stories')
-    .select('*').in('id', [now-1, now, now+1]);
+    .select('*').eq('id', now).single();
     if (error) {
         console.error(error);
         return {
@@ -14,7 +14,7 @@ export const load = async ({params}) => {
         }
     }
     return {
-        stories: data as Stories[]
+        storie: data as Stories
     }
 };
 
