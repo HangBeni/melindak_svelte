@@ -57,7 +57,7 @@
 
     <h2>Mutasd meg a ti történeteket, hogy ezzel is bátoríts másokat!</h2>
 
-    <form method="POST" action="?/story">
+    <form method="POST" action="?/story" enctype="multipart/form-data">
       <label for="story">Mi a ti történetetek? (opcionális)</label>
       <textarea
         rows="15"
