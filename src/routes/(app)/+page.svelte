@@ -20,11 +20,11 @@
       Központ Szülészeti és Nőgyógyászati Klinikáján szereztem. Az adott időszak
       alatt folyamatos szakmai képzéseken vettem részt. A szülőszobán eltöltött
       hosszú évek alatt felbecsülhetetlen szülésznői gyakorlatra tettem szert a
-      várandósok támogatásában és a szüléskísérésekben. Az eltöltött évek
+      várandósok támogatásában és a szüléskísérésekben. Az eltöltött évek alatt
       számomra a szülésznői hivatástudat életformává vált.
     </p>
     <p>
-      Jelenleg is a klinika falai között a szülőszobán folytatom munkánkámat,
+      Jelenleg is a klinika falai között, a szülőszobán folytatom munkánkámat,
       kísérem a várandós kismamákat a jóslófájásoktól -olykor az első szívhang
       megjelenésétől-a gyermekágyas időszak végéig.
     </p>
@@ -40,11 +40,11 @@
       édesapáknak előre egyeztetett időpontban bensőséges, meghitt környezetben,
       biztosítok lehetőséget, hogy bátran tabuk és előítéletek nélkül, nyíltan
       tudjunk beszélni a várandósság és a szülés körüli eseményekről. Valamint,
-      egyénre szabottan a kismama igényeihez igazodva reális válaszokat kapjanak
+      egyénre szabottan a kismama igényeihez igazodva, reális válaszokat kapjanak
       kérdéseikre.
     </p>
     <p>
-      A találkozás során válaszokat kaphatnak többek között, hogy mire lesz
+      A találkozások során válaszokat kaphatnak többek között arra, hogy mire lesz
       szüksége a kórházi csomagban. Beszélünk a szülés megindulásának jeleiről,
       és körbejárjuk a szülés egyes szakaszait, a vajjúdás folyamatát, hogy mi
       történik a testünkben a vajjúdás alatt. Tájékozódhatnak a vajjúdási, és
@@ -66,15 +66,14 @@
       levételével kapcsolatos információkról, illetve szakemberrel a kapcsolatot
       felvenni. Az „aranyóra”, és a szőrkontaktus fontosságáról, és mi a szerepe
       az újszülött fejlődésében. Bepillantást nyerhetnek a szülés utáni
-      gyermekágyas időszak, szépségéről, olykor nehézségekről, és a testben
+      gyermekágyas időszak szépségéről, olykor nehézségekről, és a testben
       lezajló változásokról. Az anyatejes táplálás fontosságáról, a
-      tejtermelődés folyamatáról, és az igényszerinti szoptatásról. A baba-barát
+      tejtermelődés folyamatáról, és az igényszerinti szoptatásról, a baba-barát
       kórház jelentéséről.
     </p>
     <p>
       Összefoglalva, igyekszem reális és biztos támaszt adni a várandósság
-      alatt. Igyekszem ott, és abban segíteni, amiben a legnagyobb szükség van
-      rá,.
+      alatt. Igyekszem ott, és abban segíteni, ahol a legnagyobb szükség van rá.
     </p>
     <h2 style="padding-top: 10px;">Áraink</h2>
     <table class="table-light">
