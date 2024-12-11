@@ -16,16 +16,16 @@
       igazán ahhoz, hogy mindezeket megvalósítsuk.
     </p>
     <p>
-      20 éves szülésznői tapasztalatainkat a Pécsi Tudományegyetem Klinikai
-      Központ Szülészeti és Nőgyógyászati Klinikáján szereztük. Az adott időszak
-      alatt folyamatos szakmai képzéseken vettünk részt. A szülőszobán eltöltött
-      hosszú évek alatt felbecsülhetetlen szülésznői gyakorlatra tettünk szert a
+      20 éves szülésznői tapasztalataimat a Pécsi Tudományegyetem Klinikai
+      Központ Szülészeti és Nőgyógyászati Klinikáján szereztem. Az adott időszak
+      alatt folyamatos szakmai képzéseken vettem részt. A szülőszobán eltöltött
+      hosszú évek alatt felbecsülhetetlen szülésznői gyakorlatra tettem szert a
       várandósok támogatásában és a szüléskísérésekben. Az eltöltött évek
-      számunkra a szülésznői hivatástudat életformává vált.
+      számomra a szülésznői hivatástudat életformává vált.
     </p>
     <p>
-      Jelenleg is a klinika falai között a szülőszobán folytatjuk munkánkat,
-      kísérjük a várandós kismamákat a jóslófájásoktól -olykor az első szívhang
+      Jelenleg is a klinika falai között a szülőszobán folytatom munkánkámat,
+      kísérem a várandós kismamákat a jóslófájásoktól -olykor az első szívhang
       megjelenésétől-a gyermekágyas időszak végéig.
     </p>
     <img
@@ -34,11 +34,11 @@
       alt="Kárász Melinda egy babával"
     />
     <p>
-      Munkánk során gyakran találkozunk olyan kismamákkal, akik elvesznek a
+      Munkám során gyakran találkozom olyan kismamákkal, akik elvesznek a
       rendelkezésre álló rengeteg igaz, esetleg téves információk, hiedelmek és
-      babonák között. Szülésfelkészítőnkön a várandós kismamáknak és a leendő
+      babonák között. Szülésfelkészítőmön a várandós kismamáknak és a leendő
       édesapáknak előre egyeztetett időpontban bensőséges, meghitt környezetben,
-      biztosítunk lehetőséget, hogy bátran tabuk és előítéletek nélkül, nyíltan
+      biztosítok lehetőséget, hogy bátran tabuk és előítéletek nélkül, nyíltan
       tudjunk beszélni a várandósság és a szülés körüli eseményekről. Valamint,
       egyénre szabottan a kismama igényeihez igazodva reális válaszokat kapjanak
       kérdéseikre.
@@ -62,7 +62,7 @@
       felkészítjük.
     </p>
     <p>
-      Segítséget tudunk biztosítani köldökzsinórvérből származó őssejtek
+      Segítséget tudok biztosítani köldökzsinórvérből származó őssejtek
       levételével kapcsolatos információkról, illetve szakemberrel a kapcsolatot
       felvenni. Az „aranyóra”, és a szőrkontaktus fontosságáról, és mi a szerepe
       az újszülött fejlődésében. Bepillantást nyerhetnek a szülés utáni
@@ -72,9 +72,9 @@
       kórház jelentéséről.
     </p>
     <p>
-      Összefoglalva, igyekszünk reális és biztos támaszt adni a várandósság
-      alatt. Igyekszünk ott, és abban segíteni, amiben a legnagyobb szükség van
-      ránk.
+      Összefoglalva, igyekszem reális és biztos támaszt adni a várandósság
+      alatt. Igyekszem ott, és abban segíteni, amiben a legnagyobb szükség van
+      rá,.
     </p>
     <h2 style="padding-top: 10px;">Áraink</h2>
     <table class="table-light">
