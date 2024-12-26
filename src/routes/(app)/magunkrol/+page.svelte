@@ -13,7 +13,7 @@
         alt="Kárász Melinda képe Kárász Melinda és egy kisbaba"
       />
       <p>
-        ülésznő vagyok. 1998-2001 között a Pécsi Szülészeti és Nőgyógyászati
+        Szülésznő vagyok. 1998-2001 között a Pécsi Szülészeti és Nőgyógyászati
         Klinikán töltöttem, a szülésznőképzés alatt a gyakorlatom.
       </p>
       <p>
