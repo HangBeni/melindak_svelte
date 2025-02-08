@@ -21,10 +21,7 @@
     </p>
 
     <div class="contact">
-      <p>
-        Kaizer Melinda elérhetőségei -> kaizermelinda@gmail.com +36 20 451 7007 <br
-        />16:00 után elérhető!
-      </p>
+        <p>Kárász Melinda elérhetőségei -> karaszmelinda2@gmail.com +36 20 210 1749</p>
     </div>
   </div>
 </div>
