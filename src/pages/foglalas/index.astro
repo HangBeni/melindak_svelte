@@ -1,0 +1,36 @@
+---
+import { Mail, Phone } from "lucide-react";
+import Layout from "@/layouts/main.astro";
+import Prices from "@/components/prices.astro";
+---
+
+<Layout>
+  <div class="grid gap-6 mt-5">
+    <h1 class="text-2xl">Az időpontot telefonon és emailen lehet egyeztetni!</h1>
+    <Prices />
+
+    <div class="flex justify-between flex-wrap">
+      <p class="text-lg font-bold">
+        Az első alkalom ára tartalmazza a korlátlan telefonos segítségnyújtást!
+      </p>
+      <div class="flex gap-2 flex-wrap [&>a]:font-bold [&>a]:underline">
+        <p>Právicz-Kárász Melinda elérhetőségei:</p>
+        <a
+          class="flex gap-1 items-center justify-center"
+          href="mailto:kaizermelinda@gmail.com"
+        >
+          <Mail />
+          karaszmelinda2@gmail.com
+        </a>
+
+        <a
+          href="tel:+36202101749"
+          class="flex gap-1 items-center justify-center"
+        >
+          <Phone />
+          +36 20 210 1749
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>
