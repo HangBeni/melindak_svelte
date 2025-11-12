@@ -20,12 +20,10 @@ export const actions = {
 		const data = await request.formData();
 
 		const { error } = await supabase.from("stories").insert({
-			created_at: new Date().toISOString(),
 			name: data.get("name"),
 			story: data.get("story"),
 			email: data.get("email"),
-			phone: data.get("telephone"),
-			public: false,
+			telephone: data.get("telephone"),
 		});
 
 		if (error) {

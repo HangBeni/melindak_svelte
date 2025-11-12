@@ -23,7 +23,6 @@ export const actions = {
 		try {
 			const data = await request.formData();
 			const payload = {
-				created_at: new Date().toISOString(),
 				name: (data.get("name") ?? null) as string | null,
 				story: (data.get("story") ?? null) as string | null,
 				email: (data.get("email") ?? null) as string | null,
