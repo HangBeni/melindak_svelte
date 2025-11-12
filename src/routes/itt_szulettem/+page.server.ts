@@ -4,10 +4,7 @@ import type { Actions } from "./$types";
 
 export const load = async () => {
 	try {
-		const { data, error } = await supabase
-			.from("stories")
-			.select("*")
-			.eq("public", true);
+		const { data, error } = await supabase.from("stories").select();
 
 		if (error) {
 			console.error(error);
@@ -30,7 +27,7 @@ export const actions = {
 				name: (data.get("name") ?? null) as string | null,
 				story: (data.get("story") ?? null) as string | null,
 				email: (data.get("email") ?? null) as string | null,
-				phone: (data.get("telephone") ?? null) as string | null,
+				telephone: (data.get("telephone") ?? null) as string | null,
 			};
 
 			const { error } = await supabase.from("stories").insert(payload);

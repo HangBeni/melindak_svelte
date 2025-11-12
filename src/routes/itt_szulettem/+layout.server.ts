@@ -5,8 +5,7 @@ export const load: LayoutServerLoad = async () => {
 	try {
 		const { data, error } = await supabase
 			.from("stories")
-			.select("*")
-			.eq("public", true)
+			.select()
 			.order("created_at", { ascending: false });
 
 		if (error) {
