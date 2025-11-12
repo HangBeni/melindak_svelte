@@ -7,27 +7,35 @@
     inject({ mode: dev ? "development" : "production" });
 </script>
 
-<h2>Történetek amik itt születtek</h2>
-<p id="description">
-    <em
-        >A szülésfelkészítés keretein belül született gyermekek és édasanyjuk
-        történeteit olvashatjátok itt</em
-    >
-</p>
+<div
+    style="display: flex; align-items: center; width: 90%; justify-content: space-around; margin-inline: auto;"
+    id="header"
+>
+    <div>
+        <h2>Történetek amik itt születtek</h2>
+        <p id="description">
+            <em
+                >A szülésfelkészítés keretein belül született gyermekek és
+                édasanyjuk történeteit olvashatjátok itt</em
+            >
+        </p>
+    </div>
+    <NewStory />
+</div>
 
-<NewStory />
 <slot />
-<Footer />
 
 <style>
     h2 {
-        font-size: 6rem;
-        margin-inline: auto;
+        font-size: 3.75rem;
         margin-bottom: 1rem;
         width: fit-content;
     }
 
     @media (max-width: 620px) {
+        #header {
+            flex-direction: column;
+        }
         #description {
             display: block;
             margin-left: 1.35rem;
@@ -37,16 +45,22 @@
             text-align: justify;
         }
         h2 {
-            font-size: 3.75rem;
+            font-size: 1.75rem;
         }
     }
 
     @media (min-width: 620px) {
+        #header {
+            display: flex;
+            align-items: center;
+            width: 90%;
+            justify-content: space-around;
+            margin-inline: auto;
+        }
         #description {
-            font-size: 3.5rem;
-            margin-left: 2.5rem;
+            font-size: 1.5rem;
             text-align: justify;
-            width: 45%;
+            width: 65%;
         }
     }
 </style>

@@ -22,21 +22,7 @@ export const load = async () => {
 
 export const actions = {
   story: async ({ request }) => {
-
     const data = await request.formData();
-    const picture = data.get("picture") as File;
-    const picExt = picture.name.trim().split(".").pop();
-    const path = `baba/${Math.round(Math.random() * 100000)}.${picExt}`;
-    const { error: picError } = await supabase.storage
-      .from("story_pics")
-      .upload(path, picture);
-    if (picError) {
-      throw picError;
-    }
-
-    const { data: downloadPicturePath} =
-      await supabase.storage.from("story_pics").getPublicUrl(path);
- 
 
     const { error } = await supabase.from("stories").insert({
       created_at: new Date().toISOString(),
@@ -44,7 +30,6 @@ export const actions = {
       story: data.get("story"),
       email: data.get("email"),
       phone: data.get("telephone"),
-      baba_pic: downloadPicturePath.publicUrl,
     });
 
     if (error) {
