@@ -38,7 +38,6 @@
             </span>
         </p>
     </div>
-  </div>
 </div>
 
 <style>
