@@ -1,6 +1,6 @@
 <script lang="ts">
     import Hero from "$lib/components/hero.svelte";
-    import { baba } from "$lib/assets/kepek/melinda_baba.png";
+    import melinda_baba from "$lib/assets/kepek/melinda_baba.png";
 </script>
 
 <main class="content-container">
@@ -30,7 +30,7 @@
             az első szívhang megjelenésétől-a gyermekágyas időszak végéig.
         </p>
         <img
-            src={baba}
+            src={melinda_baba}
             class="imgbasic img-right"
             alt="Kárász Melinda egy babával"
         />
