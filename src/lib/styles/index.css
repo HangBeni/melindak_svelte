@@ -1,21 +1,21 @@
-*{
+* {
     margin-top: 0;
 }
-body{
+body,
+html {
     padding: 0;
     margin: 0;
     width: 100%;
-    height: 100%;
+    height: 100svh;
     background-color: #fee8ec;
 }
 
-.navbar{
+.navbar {
     height: 4rem;
-    
-    background-color: rgba(255, 192, 203,0.88);
+    background-color: rgba(255, 192, 203, 0.88);
 }
 
-nav ul{
+nav ul {
     list-style: none;
     padding: 0;
     display: flex;
@@ -26,20 +26,19 @@ nav ul{
     margin-left: auto;
 }
 
-nav li{
+nav li {
     text-align: center;
 }
 
-
-.logo{
+.logo {
     position: absolute;
     left: 15px;
     padding: 10px;
     font-size: 30px;
-    font-family: 'Dancing Script', cursive;
+    font-family: "Dancing Script", cursive;
 }
-@media screen and (max-width:620px) {
-    .logo{
+@media screen and (max-width: 620px) {
+    .logo {
         display: none;
     }
     nav ul {
@@ -53,24 +52,24 @@ nav a {
     font-size: medium;
     transition: 0.4s;
     text-decoration: none;
-    font-family: 'Pacifico', cursive;
+    font-family: "Pacifico", cursive;
     margin: 0.5rem 0.25rem;
-        padding: 0.5rem 1.25rem 0.5rem 0.5rem;
-        cursor: pointer;
-        transition-property: transform;
-        transition-duration: 300ms;
+    padding: 0.5rem 1.25rem 0.5rem 0.5rem;
+    cursor: pointer;
+    transition-property: transform;
+    transition-duration: 300ms;
 }
-@media screen and (max-width: 620px){
-    nav a{
+@media screen and (max-width: 620px) {
+    nav a {
         font-size: 0.55rem;
         width: 23ch;
         padding-inline: 5px;
         text-align: center;
     }
-   .navbar{
-    display: flex;
-    justify-content: space-between;
-   }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 a {
@@ -79,7 +78,7 @@ a {
 }
 
 a::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     height: 2px;
@@ -97,143 +96,143 @@ a:hover::after {
 /*-- navbar end --*/
 
 /*-- index.html - Főoldal --*/
-.background{
+.background {
     /* height: 1024px; */
     background-image: url(../assets/kepek/helyseg.jpg);
     /* background-size: cover; */
     filter: brightness(70%);
 }
-@media screen and (max-width:1500px) {
-    .background{
+@media screen and (max-width: 1500px) {
+    .background {
         height: auto;
     }
 }
 
-.quote{
+.quote {
     width: 100%;
     height: 90%;
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 36px;
 }
 
-.quote p{
+.quote p {
     width: 50%;
     font-style: italic;
     color: white;
-    font-family: 'Pacifico', cursive;
+    font-family: "Pacifico", cursive;
 }
 
-.melinda{
+.melinda {
     font-size: 100px;
     font-style: normal;
-    font-family: 'Dancing Script', cursive;
+    font-family: "Dancing Script", cursive;
     color: beige;
 }
-.szul{
-    font-family: 'Oregano', cursive;
-    font-size: 75px;        /*<span>"szülésfelkészítés"*/
+.szul {
+    font-family: "Oregano", cursive;
+    font-size: 75px; /*<span>"szülésfelkészítés"*/
     font-style: italic;
 }
 @media screen and (max-width: 800px) {
-    .melinda{
+    .melinda {
         font-size: 60px;
     }
 
-    .quote{
+    .quote {
         font-size: 22px;
         max-width: 600px;
         margin: auto;
     }
-    .szul{
+    .szul {
         font-size: 45px;
     }
 }
 
-.content-container{
+.content-container {
+    display: grid;
     width: 100%;
-    padding-bottom: 10px;
+    height: 100%;
     background-color: #fee8ec;
 }
 
-.container{
+.container {
     width: 63%;
     margin: auto;
     background-color: #fee8ec;
 }
-@media screen and (max-width:1600px) {
-    .container{
+@media screen and (max-width: 1600px) {
+    .container {
         width: 80%;
     }
-    .content-container{
+    .content-container {
         width: 100%;
     }
 }
-@media screen and (max-width:800px) {
-    .container{
+@media screen and (max-width: 800px) {
+    .container {
         width: 90%;
     }
-    .content-container{
+    .content-container {
         width: 100%;
     }
 }
 
-.container p{
+.container p {
     font-size: 18px;
     padding: 5px;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
-
-.imgbasic{
+.imgbasic {
     max-width: 50%;
     width: 350px;
     border-radius: 20%;
 }
 
-.img-left{
+.img-left {
     float: left;
     margin-right: 2%;
     padding-bottom: 3%;
     padding-top: 3%;
 }
 
-.img-right{
+.img-right {
     float: right;
     margin-left: 2%;
 }
 @media screen and (max-width: 600px) {
-    .img-right{
+    .img-right {
         float: none;
         margin-left: 25%;
     }
 }
 
-.table-light{
-    margin:0;
+.table-light {
+    margin: 0;
     margin-bottom: 10px;
 }
 
-.b-cont{
+.b-cont {
     margin: auto;
     text-align: center;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    font-family: 'Oregano', cursive;
+    font-family: "Oregano", cursive;
     font-size: 1.5rem;
 }
-.button{
+.button {
     padding: 10px 30px;
     border-radius: 20px;
     border: none;
-    background-color: rgba(255, 192, 203,0.88);
+    background-color: rgba(255, 192, 203, 0.88);
     text-decoration: none;
     color: black;
 }
 
-.button:hover{
-    background-color: rgba(216, 112, 147,0.4);
+.button:hover {
+    background-color: rgba(216, 112, 147, 0.4);
     color: white;
 }
 
@@ -241,34 +240,36 @@ a:hover::after {
 
 /*rolunk.html - Rólunk*/
 
-article{
+article {
     margin-bottom: 5%;
 }
 
-h1,h2{
-    font-family: 'Oregano', cursive;
+h1,
+h2 {
+    font-family: "Oregano", cursive;
     margin-bottom: 0;
 }
 
-footer{
-    position: static;
+footer {
     display: flex;
     justify-content: space-around;
+    align-self: flex-end;
     bottom: 0;
     width: 100%;
-    background-color: rgba(255, 192, 203,0.88);
+    height: max-content;
+    background-color: rgba(255, 192, 203, 0.88);
     text-align: center;
 }
 
-footer p{
+footer p {
     padding-top: 10px;
     width: fit-content;
-    font-family: 'Pacifico', cursive;
+    font-family: "Pacifico", cursive;
 }
 
 /*idopontfoglalas*/
 
-table{
+table {
     margin-top: 8%;
     margin-bottom: 2%;
     width: 100%;
@@ -276,10 +277,10 @@ table{
     border-collapse: collapse;
     margin-left: auto;
     margin-right: auto;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
-th{
+th {
     text-align: center;
     font-weight: bolder;
     border-bottom: 2px solid black;
@@ -287,32 +288,20 @@ th{
     padding: 10px;
 }
 
-tr,td{
+tr,
+td {
     border: 1px solid black;
     padding: 10px;
 }
 
-.price{
+.price {
     text-align: center;
 }
 
-.contact{
+.contact {
     margin-top: 3%;
     font-weight: bold;
     padding-left: 5%;
     margin-bottom: 5%;
 }
-
-.custom-footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 40px;
-}
-@media screen and (max-width:600px){
-    .custom-footer{
-        display: none;
-    }
-}
-
 /*KR,TT,HB*/
