@@ -2,9 +2,11 @@
     import NewStory from "$lib/components/birth/new_story.svelte";
     import "$lib/styles/index.css";
     import { inject } from "@vercel/analytics";
-    import { dev } from "$app/environment";
+    import { dev, browser } from "$app/environment";
     import Footer from "$lib/components/footer.svelte";
-    inject({ mode: dev ? "development" : "production" });
+ if (browser && !dev) {
+    inject({ mode: "production" });
+  }
 </script>
 
 <div
