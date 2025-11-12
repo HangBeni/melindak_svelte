@@ -1,6 +1,6 @@
 <script lang="ts">
-    import Hero from "$lib/components/hero.svelte";
     import melinda_baba from "$lib/assets/kepek/melinda_baba.png";
+    import Hero from "$lib/components/hero.svelte";
 </script>
 
 <main class="content-container">

@@ -1,235 +1,234 @@
 * {
-    margin-top: 0;
+	margin-top: 0;
 }
 body,
 html {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fee8ec;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fee8ec;
 }
 
 .navbar {
-    height: 4rem;
-    background-color: rgba(255, 192, 203, 0.88);
+	height: 4rem;
+	background-color: rgba(255, 192, 203, 0.88);
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    width: 80%;
-    margin-left: auto;
+	list-style: none;
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
+	width: 80%;
+	margin-left: auto;
 }
 
 nav li {
-    text-align: center;
+	text-align: center;
 }
 
 .logo {
-    position: absolute;
-    left: 15px;
-    padding: 10px;
-    font-size: 30px;
-    font-family: "Dancing Script", cursive;
+	position: absolute;
+	left: 15px;
+	padding: 10px;
+	font-size: 30px;
+	font-family: "Dancing Script", cursive;
 }
 @media screen and (max-width: 620px) {
-    .logo {
-        display: none;
-    }
-    nav ul {
-        width: 100%;
-    }
+	.logo {
+		display: none;
+	}
+	nav ul {
+		width: 100%;
+	}
 }
 
 nav a {
-    color: rgba(0, 0, 0, 0.88);
-    text-transform: uppercase;
-    font-size: medium;
-    transition: 0.4s;
-    text-decoration: none;
-    font-family: "Pacifico", cursive;
-    margin: 0.5rem 0.25rem;
-    padding: 0.5rem 1.25rem 0.5rem 0.5rem;
-    cursor: pointer;
-    transition-property: transform;
-    transition-duration: 300ms;
+	color: rgba(0, 0, 0, 0.88);
+	text-transform: uppercase;
+	font-size: medium;
+	transition: 0.4s;
+	text-decoration: none;
+	font-family: "Pacifico", cursive;
+	margin: 0.5rem 0.25rem;
+	padding: 0.5rem 1.25rem 0.5rem 0.5rem;
+	cursor: pointer;
+	transition-property: transform;
+	transition-duration: 300ms;
 }
 @media screen and (max-width: 620px) {
-    nav a {
-        font-size: 0.55rem;
-        width: max-content;
-        padding-inline: 5px;
-        text-align: center;
-    }
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-    }
+	nav a {
+		font-size: 0.55rem;
+		width: max-content;
+		padding-inline: 5px;
+		text-align: center;
+	}
+	.navbar {
+		display: flex;
+		justify-content: space-between;
+	}
 }
 
 a {
-    text-decoration: none;
-    position: relative;
+	text-decoration: none;
+	position: relative;
 }
 
 a::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: currentColor;
-    transform: scaleX(0);
-    transition: transform 0.3s ease-in-out;
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: currentColor;
+	transform: scaleX(0);
+	transition: transform 0.3s ease-in-out;
 }
 
 a:hover::after {
-    transform: scaleX(1);
+	transform: scaleX(1);
 }
 
 /*-- navbar end --*/
 
 /*-- index.html - Főoldal --*/
 .background {
-    /* height: 1024px; */
-    background-image: url(../assets/kepek/helyseg.jpg);
-    /* background-size: cover; */
-    filter: brightness(70%);
+	/* height: 1024px; */
+	background-image: url(../assets/kepek/helyseg.jpg);
+	/* background-size: cover; */
+	filter: brightness(70%);
 }
 @media screen and (max-width: 1500px) {
-    .background {
-        height: auto;
-        padding: 2rem;
-    }
+	.background {
+		height: auto;
+		padding: 2rem;
+	}
 }
 
 .quote {
-    display: flex;
-    width: 100%;
-    height: 90%;
-    display: flex;
-    place-content: center;
+	display: flex;
+	width: 100%;
+	height: 90%;
+	display: flex;
+	place-content: center;
 }
 
 .quote p {
-    width: 70%;
-    font-style: italic;
-    color: white;
-    font-family: "Pacifico", cursive;
+	width: 70%;
+	font-style: italic;
+	color: white;
+	font-family: "Pacifico", cursive;
 }
 
 .melinda {
-    font-size: 100px;
-    font-style: normal;
-    text-align: center;
-    font-family: "Dancing Script", cursive;
-    color: beige;
+	font-size: 100px;
+	font-style: normal;
+	text-align: center;
+	font-family: "Dancing Script", cursive;
+	color: beige;
 }
 .szul {
-    font-family: "Oregano", cursive;
-    font-size: 75px; /*<span>"szülésfelkészítés"*/
-    font-style: italic;
+	font-family: "Oregano", cursive;
+	font-size: 75px; /*<span>"szülésfelkészítés"*/
+	font-style: italic;
 }
 @media screen and (max-width: 800px) {
-    .melinda {
-        font-size: 1.85rem;
-        text-align: center;
-    }
-    .szul {
-        font-size: 45px;
-    }
+	.melinda {
+		font-size: 1.85rem;
+		text-align: center;
+	}
+	.szul {
+		font-size: 45px;
+	}
 }
 
 .content-container {
-    display: grid;
-    width: 100%;
-    height: 100%;
-    background-color: #fee8ec;
+	display: grid;
+	width: 100%;
+	height: 100%;
+	background-color: #fee8ec;
 }
 
 .container {
-    width: 63%;
-    margin-inline: auto;
-    background-color: #fee8ec;
+	width: 63%;
+	margin-inline: auto;
+	background-color: #fee8ec;
 }
 @media screen and (max-width: 1600px) {
-    .container {
-        width: 80%;
-    }
-    .content-container {
-        width: 100%;
-    }
+	.container {
+		width: 80%;
+	}
+	.content-container {
+		width: 100%;
+	}
 }
 @media screen and (max-width: 800px) {
-    .container {
-        width: 90%;
-    }
-    .content-container {
-        width: 100%;
-    }
+	.container {
+		width: 90%;
+	}
+	.content-container {
+		width: 100%;
+	}
 }
 
 .container p {
-    font-size: 17px;
-    padding: 5px;
-    font-family: "Poppins", sans-serif;
+	font-size: 17px;
+	padding: 5px;
+	font-family: "Poppins", sans-serif;
 }
 
 .imgbasic {
-    max-width: 50%;
-    width: 300px;
-    border-radius: 20%;
+	max-width: 50%;
+	width: 300px;
+	border-radius: 20%;
 }
 
 .img-left {
-    float: left;
-    margin-right: 2%;
-    padding-bottom: 3%;
-    padding-top: 3%;
+	float: left;
+	margin-right: 2%;
+	padding-bottom: 3%;
+	padding-top: 3%;
 }
 
 .img-right {
-    float: right;
-    margin-left: 2%;
+	float: right;
+	margin-left: 2%;
 }
 @media screen and (max-width: 600px) {
-    .img-right {
-        float: none;
-        margin-left: 25%;
-    }
+	.img-right {
+		float: none;
+		margin-left: 25%;
+	}
 }
 
 .table-light {
-    margin: 0;
-    margin-bottom: 10px;
+	margin: 0;
+	margin-bottom: 10px;
 }
 
 .b-cont {
-    margin: auto;
-    text-align: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-family: "Oregano", cursive;
-    font-size: 1.5rem;
+	margin: auto;
+	text-align: center;
+	margin-block: 2rem;
+	font-family: "Oregano", cursive;
+	font-size: 1.5rem;
 }
 .button {
-    padding: 10px 30px;
-    border-radius: 20px;
-    border: none;
-    background-color: rgba(255, 192, 203, 0.88);
-    text-decoration: none;
-    color: black;
+	padding: 10px 30px;
+	border-radius: 20px;
+	border: none;
+	background-color: rgba(255, 192, 203, 0.88);
+	text-decoration: none;
+	color: black;
 }
 
 .button:hover {
-    background-color: rgba(216, 112, 147, 0.4);
-    color: white;
+	background-color: rgba(216, 112, 147, 0.4);
+	color: white;
 }
 
 /**/
@@ -237,67 +236,67 @@ a:hover::after {
 /*rolunk.html - Rólunk*/
 
 article {
-    margin-bottom: 5%;
+	margin-bottom: 5%;
 }
 
 h1,
 h2 {
-    font-family: "Oregano", cursive;
-    margin-bottom: 0;
+	font-family: "Oregano", cursive;
+	margin-bottom: 0;
 }
 
 footer {
-    display: flex;
-    justify-content: space-around;
-    align-self: flex-end;
-    bottom: 0;
-    width: 100%;
-    height: max-content;
-    background-color: rgba(255, 192, 203, 0.88);
-    text-align: center;
+	display: flex;
+	justify-content: space-around;
+	align-self: flex-end;
+	bottom: 0;
+	width: 100%;
+	height: max-content;
+	background-color: rgba(255, 192, 203, 0.88);
+	text-align: center;
 }
 
 footer p {
-    padding-top: 10px;
-    width: fit-content;
-    font-family: "Pacifico", cursive;
+	padding-top: 10px;
+	width: fit-content;
+	font-family: "Pacifico", cursive;
 }
 
 /*idopontfoglalas*/
 
 table {
-    margin-top: 8%;
-    margin-bottom: 2%;
-    width: 100%;
-    text-align: center;
-    border-collapse: collapse;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: "Poppins", sans-serif;
+	margin-top: 8%;
+	margin-bottom: 2%;
+	width: 100%;
+	text-align: center;
+	border-collapse: collapse;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: "Poppins", sans-serif;
 }
 
 th {
-    text-align: center;
-    font-weight: bolder;
-    border-bottom: 2px solid black;
-    border-left: 1px solid black;
-    padding: 10px;
+	text-align: center;
+	font-weight: bolder;
+	border-bottom: 2px solid black;
+	border-left: 1px solid black;
+	padding: 10px;
 }
 
 tr,
 td {
-    border: 1px solid black;
-    padding: 10px;
+	border: 1px solid black;
+	padding: 10px;
 }
 
 .price {
-    text-align: center;
+	text-align: center;
 }
 
 .contact {
-    margin-top: 3%;
-    font-weight: bold;
-    padding-left: 5%;
-    margin-bottom: 5%;
+	margin-top: 3%;
+	font-weight: bold;
+	padding-left: 5%;
+	margin-bottom: 5%;
 }
 /*KR,TT,HB*/
