@@ -23,8 +23,19 @@
 
     <div class="contact">
         <p>
-            Právicz-Kárász Melinda elérhetőségei -> karaszmelinda2@gmail.com +36
-            20 210 1749
+            Právicz-Kárász Melinda elérhetőségei: <span
+                style="display: flex; flex-direction: column;"
+            >
+                <a
+                    style="width: max-content;"
+                    href="mailto:karaszmelinda2@gmail.com"
+                >
+                    karaszmelinda2@gmail.com
+                </a> <br />
+                <a style="width: max-content;" href="tel:+36202101749">
+                    +36 20 210 1749
+                </a>
+            </span>
         </p>
     </div>
 </div>
