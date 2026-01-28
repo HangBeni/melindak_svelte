@@ -29,7 +29,9 @@ export const actions = {
 				telephone: (data.get("telephone") ?? null) as string | null,
 			};
 
-			const { error } = await supabase.from("stories").insert(payload);
+			const { error } = await supabase
+				.from("stories")
+				.insert({ ...payload, public: false });
 
 			if (error) {
 				console.error(error);
